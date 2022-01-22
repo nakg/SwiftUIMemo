@@ -8,7 +8,7 @@
 import Foundation
 
 extension DateFormatter {
-	static let memoDateFormatter: DateFormatter = {
+	static let memoDateFormatter: DateFormatter = { // 데이터포매터 초기화.
 		let f = DateFormatter()
 		f.dateStyle = .long
 		f.timeStyle = .none

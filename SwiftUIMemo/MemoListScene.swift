@@ -15,15 +15,7 @@ struct MemoListScene: View {
 		// 배열에 저장되어있는 메모가, memo 파라미터로 전달된다.
 		NavigationView {
 			List(store.list) { memo in
-				VStack(alignment: .leading) { // VStack의 모든 뷰를 좌측정렬.
-					Text(memo.content)
-						.font(.body) // 기본 폰트.
-						.lineLimit(1) // 메모내용을 1줄로만 표시하고, 내용이 길다면 뒷부분 생략.
-					
-					Text("\(memo.insertDate, formatter: self.formatter)")
-						.font(.caption)
-						.foregroundColor(Color(UIColor.secondaryLabel))
-				}
+				MemoCell(memo: memo)
 			}
 			.navigationTitle("내 메모") // Modifier를 이용해서 타이틀을 추가한다.
 		}
@@ -37,3 +29,4 @@ struct MemoListScene_Previews: PreviewProvider {
 			.environmentObject(DateFormatter.memoDateFormatter) // 커스텀 데이터포매터를 프리뷰에 셋팅.
     }
 }
+
