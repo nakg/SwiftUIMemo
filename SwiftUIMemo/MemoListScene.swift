@@ -8,13 +8,22 @@
 import SwiftUI
 
 struct MemoListScene: View {
+	@EnvironmentObject var store: MemoStore // MemoStore 인스턴스를 커스텀 공유데이터로 등록을 했다.(SceneDelegate) 뷰가 생성되는 시점에 공유데이터 목록을 확인하고, 스토어속성과 동일한 형식을 가진 객체가 등록되어있다면 여기에 자동으로 저장해준다. Swift UI는 이러한 방식으로 하나의 데이터를 여러 View에서 공유한다.
+	
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+		// 배열에 저장되어있는 메모가, memo 파라미터로 전달된다.
+		NavigationView {
+			List(store.list) { memo in
+				Text(memo.content)
+			}
+			.navigationTitle("내 메모") // Modifier를 이용해서 타이틀을 추가한다.
+		}
     }
 }
 
 struct MemoListScene_Previews: PreviewProvider {
     static var previews: some View {
-		MemoListScene()
+		MemoListScene().environmentObject(MemoStore()) // 프리뷰에서 사용할 memostore를 커스텀 공유 데이터로 등록하겠다.
+		
     }
 }

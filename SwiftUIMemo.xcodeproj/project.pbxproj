@@ -68,12 +68,12 @@
 				B384F1DB279C1CCF009A95E1 /* AppDelegate.swift */,
 				B384F1DD279C1CCF009A95E1 /* SceneDelegate.swift */,
 				B384F1DF279C1CCF009A95E1 /* ViewController.swift */,
+				B384F1F2279C1D0A009A95E1 /* MemoListScene.swift */,
 				B384F1E1279C1CCF009A95E1 /* Main.storyboard */,
 				B384F1E7279C1CD2009A95E1 /* Assets.xcassets */,
 				B384F1E9279C1CD2009A95E1 /* LaunchScreen.storyboard */,
 				B384F1EC279C1CD3009A95E1 /* Info.plist */,
 				B384F1E4279C1CCF009A95E1 /* SwiftUIMemo.xcdatamodeld */,
-				B384F1F2279C1D0A009A95E1 /* MemoListScene.swift */,
 			);
 			path = SwiftUIMemo;
 			sourceTree = "<group>";
