@@ -19,6 +19,7 @@
 		B384F1F8279C48C0009A95E1 /* MemoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B384F1F7279C48C0009A95E1 /* MemoStore.swift */; };
 		B384F1FB279C544E009A95E1 /* DataFormatter+Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B384F1FA279C544E009A95E1 /* DataFormatter+Memo.swift */; };
 		B384F1FE279C5ABB009A95E1 /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B384F1FD279C5ABB009A95E1 /* MemoCell.swift */; };
+		B384F201279CD04C009A95E1 /* ComposeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B384F200279CD04C009A95E1 /* ComposeScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		B384F1F7279C48C0009A95E1 /* MemoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoStore.swift; sourceTree = "<group>"; };
 		B384F1FA279C544E009A95E1 /* DataFormatter+Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataFormatter+Memo.swift"; sourceTree = "<group>"; };
 		B384F1FD279C5ABB009A95E1 /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
+		B384F200279CD04C009A95E1 /* ComposeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,13 +70,12 @@
 		B384F1DA279C1CCF009A95E1 /* SwiftUIMemo */ = {
 			isa = PBXGroup;
 			children = (
-				B384F1FC279C5AA2009A95E1 /* View */,
+				B384F1FF279CCFF9009A95E1 /* Scene */,
 				B384F1F9279C542F009A95E1 /* Extension */,
 				B384F1F4279C473E009A95E1 /* Model */,
 				B384F1DB279C1CCF009A95E1 /* AppDelegate.swift */,
 				B384F1DD279C1CCF009A95E1 /* SceneDelegate.swift */,
 				B384F1DF279C1CCF009A95E1 /* ViewController.swift */,
-				B384F1F2279C1D0A009A95E1 /* MemoListScene.swift */,
 				B384F1E1279C1CCF009A95E1 /* Main.storyboard */,
 				B384F1E7279C1CD2009A95E1 /* Assets.xcassets */,
 				B384F1E9279C1CD2009A95E1 /* LaunchScreen.storyboard */,
@@ -107,6 +108,16 @@
 				B384F1FD279C5ABB009A95E1 /* MemoCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B384F1FF279CCFF9009A95E1 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				B384F1FC279C5AA2009A95E1 /* View */,
+				B384F1F2279C1D0A009A95E1 /* MemoListScene.swift */,
+				B384F200279CD04C009A95E1 /* ComposeScene.swift */,
+			);
+			path = Scene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +200,7 @@
 				B384F1DC279C1CCF009A95E1 /* AppDelegate.swift in Sources */,
 				B384F1DE279C1CCF009A95E1 /* SceneDelegate.swift in Sources */,
 				B384F1FE279C5ABB009A95E1 /* MemoCell.swift in Sources */,
+				B384F201279CD04C009A95E1 /* ComposeScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,7 +277,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -320,7 +332,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -344,6 +356,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -371,6 +384,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
