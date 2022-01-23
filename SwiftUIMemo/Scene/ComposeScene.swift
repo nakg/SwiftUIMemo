@@ -10,6 +10,7 @@ import SwiftUI
 struct ComposeScene: View {
 	@EnvironmentObject var store: MemoStore
 	@State private var content: String = "" // 입력한 속성을 바인딩할 때 사용하는 속성 선언. 이런 속성들은 주로 @State로 선언.
+	@Binding var showComposer: Bool // 바인딩 속성 선언.
 	
     var body: some View {
 		NavigationView {
@@ -18,15 +19,16 @@ struct ComposeScene: View {
 			}
 			.frame(maxWidth: .infinity, maxHeight: .infinity)
 			.navigationBarTitle("새 메모", displayMode: .inline)
-			.navigationBarItems(leading: DismissButton(), trailing: SaveButton())
+			.navigationBarItems(leading: DismissButton(show: $showComposer), trailing: SaveButton(show: $showComposer))
 		}
     }
 }
 
 fileprivate struct DismissButton: View {
+	@Binding var show: Bool // 바인딩 속성 선언.
 	var body: some View {
 		Button {
-			
+			self.show = false
 		} label: {
 			Text("취소")
 		}
@@ -34,9 +36,10 @@ fileprivate struct DismissButton: View {
 }
 
 fileprivate struct SaveButton: View {
+	@Binding var show: Bool // 바인딩 속성 선언.
 	var body: some View {
 		Button {
-			
+			self.show = false
 		} label: {
 			Text("저장")
 		}
@@ -46,7 +49,7 @@ fileprivate struct SaveButton: View {
 
 struct ComposeScene_Previews: PreviewProvider {
     static var previews: some View {
-        ComposeScene()
+		ComposeScene(showComposer: .constant(false)) // 프리뷰에서 에러가 발생하지 않도록, 생성자로 속성을 전달. 그런데 여기로 전달할 수 있는 속성이 없다. 이럴떈 보통 constant binding을 전달한다.
 			.environmentObject(MemoStore()) // MemoStore를 커스텀 데이터르로 등록
     }
 }
