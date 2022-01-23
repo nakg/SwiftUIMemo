@@ -15,11 +15,16 @@ struct ComposeScene: View {
     var body: some View {
 		NavigationView {
 			VStack {
-				TextField("", text: $content) // 이렇게하면 content속성과, textfield가 바인딩되고 텍스트필드에 문자를 입력하면 content 속성에 자동으로 저장된다. content 속성에 문자열을 저장하면 텍스트필드에도 반영된다. Swift UI는 이런 2-way 방식이 쉽다.
+				TextView(text: $content) // 이렇게하면 content속성과, textfield가 바인딩되고 텍스트필드에 문자를 입력하면 content 속성에 자동으로 저장된다. content 속성에 문자열을 저장하면 텍스트필드에도 반영된다. Swift UI는 이런 2-way 방식이 쉽다.
+					.frame(maxWidth: .infinity, maxHeight: .infinity)
+					.background(Color.yellow) 
+				
 			}
 			.frame(maxWidth: .infinity, maxHeight: .infinity)
 			.navigationBarTitle("새 메모", displayMode: .inline)
-			.navigationBarItems(leading: DismissButton(show: $showComposer), trailing: SaveButton(show: $showComposer))
+			.navigationBarItems(leading: DismissButton(show: $showComposer), trailing: SaveButton(show: $showComposer, content: $content))
+			
+			
 		}
     }
 }
@@ -37,8 +42,15 @@ fileprivate struct DismissButton: View {
 
 fileprivate struct SaveButton: View {
 	@Binding var show: Bool // 바인딩 속성 선언.
+	
+	@EnvironmentObject var store: MemoStore
+	@Binding var content: String
+	
 	var body: some View {
 		Button {
+			// 입력한 메모 저장.
+			self.store.insert(memo: self.content)
+			
 			self.show = false
 		} label: {
 			Text("저장")

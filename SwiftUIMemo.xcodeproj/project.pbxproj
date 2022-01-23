@@ -20,6 +20,7 @@
 		B384F1FB279C544E009A95E1 /* DataFormatter+Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B384F1FA279C544E009A95E1 /* DataFormatter+Memo.swift */; };
 		B384F1FE279C5ABB009A95E1 /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B384F1FD279C5ABB009A95E1 /* MemoCell.swift */; };
 		B384F201279CD04C009A95E1 /* ComposeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B384F200279CD04C009A95E1 /* ComposeScene.swift */; };
+		B38D9106279D8DE600296C14 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38D9105279D8DE600296C14 /* TextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		B384F1FA279C544E009A95E1 /* DataFormatter+Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataFormatter+Memo.swift"; sourceTree = "<group>"; };
 		B384F1FD279C5ABB009A95E1 /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
 		B384F200279CD04C009A95E1 /* ComposeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeScene.swift; sourceTree = "<group>"; };
+		B38D9105279D8DE600296C14 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				B384F1FD279C5ABB009A95E1 /* MemoCell.swift */,
+				B38D9105279D8DE600296C14 /* TextView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B384F1E0279C1CCF009A95E1 /* ViewController.swift in Sources */,
+				B38D9106279D8DE600296C14 /* TextView.swift in Sources */,
 				B384F1F3279C1D0A009A95E1 /* MemoListScene.swift in Sources */,
 				B384F1FB279C544E009A95E1 /* DataFormatter+Memo.swift in Sources */,
 				B384F1F6279C4756009A95E1 /* Memo.swift in Sources */,
