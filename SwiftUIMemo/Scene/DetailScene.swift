@@ -13,6 +13,9 @@ struct DetailScene: View {
 	@EnvironmentObject var formatter: DateFormatter
 	
 	@State private var showEditSheet = false
+	@State private var showDeleteAfter = false // 경고창
+	
+	@Environment(\.presentationMode) var presentationMode
 	
     var body: some View {
 		VStack { // VStack - ScrollView - Vstack -> 이렇게하면 화면벗어나면 자동으로 스크롤된다.
@@ -34,6 +37,25 @@ struct DetailScene: View {
 			
 			HStack {
 				Button(action: {
+					self.showDeleteAfter.toggle()
+				}, label: {
+					Image(systemName: "trash")
+						.foregroundColor(Color(UIColor.systemRed))
+				})
+					.padding()
+					.alert(isPresented: $showDeleteAfter, content: {
+						Alert(title: Text("삭제 확인"), message: Text("메로를 삭제할까요?"),
+							  primaryButton:
+									.destructive(Text("삭제"), action: {
+							self.store.delete(memo: self.memo)
+							self.presentationMode.wrappedValue.dismiss() // 이전화면으로 돌아간다.
+						}),
+							  secondaryButton: .cancel())
+					})
+				
+				Spacer()
+				
+				Button(action: {
 					self.showEditSheet.toggle()
 				}, label: {
 					Image(systemName: "square.and.pencil")
@@ -45,6 +67,8 @@ struct DetailScene: View {
 							.environmentObject(KeyboardObserver())
 					})
 			}
+			.padding(.leading)
+			.padding(.trailing) // 너무 버튼이 좌우에 붙어서, 기본여백 추가함.
 		}
 		.navigationBarTitle("메모 보기")
     }
