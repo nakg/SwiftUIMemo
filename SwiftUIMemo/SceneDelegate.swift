@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		guard let _ = (scene as? UIWindowScene) else { return }
 		
 		// Get the managed object context from the shared persistent container.
-		let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+		let context = CoreDataManager.persistentContainer.viewContext
 		let store = MemoStore()
 		
 		// Create the SwiftUI view and set the context as the value for the managedObjectContext environment keyPath.
@@ -64,7 +64,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		// to restore the scene back to its current state.
 
 		// Save changes in the application's managed object context when the application transitions to the background.
-		(UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+		CoreDataManager.shared.saveContext()
 	}
 
 
